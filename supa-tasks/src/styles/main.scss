@@ -1,0 +1,54 @@
+body {
+  font-family: sans-serif;
+  background: #f4f6f8;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.login, .dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+input {
+  margin: 5px;
+  padding: 8px;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.tasklist {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.tasklist ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tasklist li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.tasklist li.done span {
+  text-decoration: line-through;
+  color: gray;
+}
