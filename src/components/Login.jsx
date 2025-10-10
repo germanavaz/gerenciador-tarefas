@@ -43,7 +43,7 @@ export default function Login() {
 
       <button onClick={handleSignIn} disabled={loading}>Entrar</button>
       <button onClick={handleSignUp} disabled={loading}>Cadastrar</button>
-      <button onClick={handleGoogleLogin}>Entrar com Google</button>
+      {/* <button onClick={handleGoogleLogin}>Entrar com Google</button> */}
     </div>
   );
 }
