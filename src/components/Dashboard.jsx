@@ -42,7 +42,7 @@ export default function Dashboard({ user }) {
       <button onClick={handleLogout}>Sair</button>
 
       <div className="lists">
-        <h3>Suas listas</h3>
+        <h3>Nova Lista:</h3>
         <input
           placeholder="Nova lista"
           value={newList}
@@ -50,6 +50,7 @@ export default function Dashboard({ user }) {
         />
         <button onClick={addList}>Adicionar Lista</button>
 
+        <h3>Suas Listas:</h3>
         <div className="lists-container">
           {lists.map((list) => (
             <div key={list.id} className="list-item">
