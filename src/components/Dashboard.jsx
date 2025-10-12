@@ -6,9 +6,17 @@ export default function Dashboard({ user }) {
   const [lists, setLists] = useState([]);
   const [newList, setNewList] = useState('');
 
+
   async function fetchLists() {
     const { data, error } = await supabase.from('lists').select('*').order('created_at', { ascending: false });
     if (!error) setLists(data);
+  }
+
+  async function deleteList(listId) {
+    const { error } = await supabase.from('lists').delete().eq('id', listId);
+    if (!error) {
+      fetchLists();
+    }
   }
 
   async function addList() {
@@ -44,7 +52,12 @@ export default function Dashboard({ user }) {
 
         <div className="lists-container">
           {lists.map((list) => (
-            <TaskList key={list.id} list={list} user={user} />
+            <div key={list.id} className="list-item">
+              <TaskList list={list} user={user} />
+              <button onClick={() => deleteList(list.id)} style={{ marginLeft: '8px', color: 'red' }}>
+                Excluir
+              </button>
+            </div>
           ))}
         </div>
       </div>
