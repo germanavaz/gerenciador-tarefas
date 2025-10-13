@@ -38,25 +38,31 @@ export default function Dashboard({ user }) {
 
   return (
     <div className="dashboard">
-      <h2>Bem-vindo, {user.email}</h2>
-      <button onClick={handleLogout}>Sair</button>
+      <div className="header">
+        <h2>Bem-vindo, {user.email}</h2>
+        <button className="btn-sair" onClick={handleLogout}>Sair</button>
+        </div>
 
-      <div className="lists">
+      
+      <div className="adc-list">
         <h3>Nova Lista:</h3>
         <input
           placeholder="Nova lista"
           value={newList}
           onChange={(e) => setNewList(e.target.value)}
         />
-        <button onClick={addList}>Adicionar Lista</button>
+        <button className="btn-adicionar" onClick={addList}>Adicionar Lista</button>
+      </div>
 
+
+      <div className="lists">
         <h3>Suas Listas:</h3>
         <div className="lists-container">
           {lists.map((list) => (
             <div key={list.id} className="list-item">
               <TaskList list={list} user={user} />
-              <button onClick={() => deleteList(list.id)} style={{ marginLeft: '8px', color: 'red' }}>
-                Excluir
+              <button className="btn-excluir" onClick={() => deleteList(list.id)} >
+                Excluir Lista
               </button>
             </div>
           ))}
