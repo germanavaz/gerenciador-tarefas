@@ -62,12 +62,13 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button onClick={handleSignIn} disabled={loading}>Entrar</button>
-          <p>Ainda não tem conta? <button className="btn-cadastre-se" onClick={() => setShowSignUp(true)} disabled={loading}>Cadastre-se</button></p>
           {/* <button onClick={handleGoogleLogin}>Entrar com Google</button> */}
+
+          <p>Ainda não tem conta? <button className="btn-cadastre-se" onClick={() => setShowSignUp(true)} disabled={loading}>Cadastre-se</button></p>
           </form>
         </>
       ) : (
-        <div className="signup-modal" style={{ border: '1px solid #ccc', padding: 20, borderRadius: 8, background: '#fff', maxWidth: 350, margin: '0 auto' }}>
+        <div className="signup-modal">
           <h2>Faça seu cadastro</h2>
           <form>
             <input
@@ -89,7 +90,7 @@ export default function Login() {
             onChange={(e) => setSignUpPassword(e.target.value)}
           />
           <button onClick={handleSignUp} disabled={loading}>Cadastrar</button>
-          <button onClick={() => setShowSignUp(false)} style={{ marginLeft: 8 }}>Voltar</button>
+          <button className='btn-voltar' onClick={() => setShowSignUp(false)}>Voltar</button>
           </form>
         </div>
       )}

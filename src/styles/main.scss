@@ -40,7 +40,7 @@ input {
 }
 
 button {
-  margin: 5px;
+  margin: 0 3px;
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 20px;
@@ -79,8 +79,6 @@ button {
 // PÁGINA DE LOGIN E CADASTRO
 
 
-
-
 .login, .dashboard {
   background: white;
   padding: 20px;
@@ -103,7 +101,7 @@ form {
   
   input {
         margin-bottom: .5rem;
-        padding: .5rem;
+        padding: .8rem;
         border: 1px solid #ccc;
         border-radius: 20px;
         background-color: transparent;
@@ -120,7 +118,7 @@ form {
         cursor: pointer;
         font-size: 1rem;
         transition: background-color .3s ease;
-        margin-bottom: .5rem;
+        margin: .5rem;
 
         &:hover {
             background-color: #003d99;
@@ -139,5 +137,33 @@ form {
   &:hover {
     text-decoration: underline;
     background-color: transparent;
+  }
+}
+
+.btn-voltar {
+  background-color: gray;
+  margin: 0 .5rem;
+
+  &:hover {
+    background-color: darkgray;
+  }
+}
+
+@media (max-width: 768px) {
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .login {
+    width: 80vw;
+  }
+
+  .lists-container {
+    flex-direction: column;
   }
 }
